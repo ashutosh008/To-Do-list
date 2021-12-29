@@ -6,9 +6,9 @@ ToDo List Application made purely in JavaScript, CSS, HTML.
 
 Run the follow url in browser
 
-url
-
+```url
 https://ashutosh008.github.io/To-Do-list/
+```
 
 ## Usage
 
@@ -22,9 +22,9 @@ Make daily tasks list using this simple application that has following functiona
 
 - Add Items
 
-*array.push()*
+**array.push()**
 
-javascript
+```javascript
 // add item to items
         addItem = () => {
             let item = document.getElementById('item').value;
@@ -35,15 +35,15 @@ javascript
                 buildList(items, completed);
             }
         }
+```
 
-
-This function adds item (value in the input field with id 'item') to Items array *if not empty*
+This function adds item (value in the input field with id 'item') to Items array **if not empty**
 
 - Mark Item Complete
 
-*array.filter()*
+**array.filter()**
 
-javascript
+```javascript
 // complete task
         completeTask = (id) => {
             completed.push(items[id]);
@@ -56,15 +56,15 @@ javascript
             buildList(items, completed);
 
         }
-
+```
 
 This function pushes completed item to completed array. Filters (remove) out that item from items array and builds list again.
 
 - Build List 
 
-*DOM Manipulation*
+**DOM Manipulation**
 
-javascript
+```javascript
 // build list not completed items on top and completed items on bottom
         buildList = (items, completed) => {
             let ul = document.getElementById('listGroup');
@@ -84,14 +84,14 @@ javascript
             }
             ul.innerHTML = html;
         }
- 
+``` 
 
-This function changes content of unordered list (with id list-group) every time it is called. It display list of item in items array (task to be completed with mark complete and delete button), list of item in completed array (completed tasks with delete button)
+This function changes content of unordered list <ul> (with id list-group) every time it is called. It display list of item in items array (task to be completed with mark complete and delete button), list of item in completed array (completed tasks with delete button)
 
 
 - Delete Item
 
-javascript
+```javascript
 // Delete completed item
         deleteCompletedItem = (id) => {
             let value = completed[id];
@@ -102,6 +102,6 @@ javascript
 
             buildList(items, completed);
         }
-
+```
 
 This function filters out item from completed list and builds list again in frontend.
